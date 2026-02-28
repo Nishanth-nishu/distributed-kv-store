@@ -1,0 +1,111 @@
+version: "3.8"
+
+# ─────────────────────────────────────────────────────
+#  3-Node Distributed KV Store Cluster
+#
+#  Usage:
+#    docker-compose up --build -d     # Start cluster
+#    docker-compose logs -f           # View logs
+#    docker-compose stop node2        # Simulate failure
+#    docker-compose down              # Tear down
+# ─────────────────────────────────────────────────────
+
+services:
+  node1:
+    build: .
+    container_name: kvstore-node1
+    command:
+      - "--node-id"
+      - "node1"
+      - "--port"
+      - "7000"
+      - "--data-dir"
+      - "/data"
+      - "--seed"
+      - "node2:7000"
+      - "--seed"
+      - "node3:7000"
+      - "--N"
+      - "3"
+      - "--R"
+      - "2"
+      - "--W"
+      - "2"
+      - "--log-level"
+      - "info"
+    ports:
+      - "7001:7000"
+    volumes:
+      - node1_data:/data
+    networks:
+      - kvnet
+    restart: unless-stopped
+
+  node2:
+    build: .
+    container_name: kvstore-node2
+    command:
+      - "--node-id"
+      - "node2"
+      - "--port"
+      - "7000"
+      - "--data-dir"
+      - "/data"
+      - "--seed"
+      - "node1:7000"
+      - "--seed"
+      - "node3:7000"
+      - "--N"
+      - "3"
+      - "--R"
+      - "2"
+      - "--W"
+      - "2"
+      - "--log-level"
+      - "info"
+    ports:
+      - "7002:7000"
+    volumes:
+      - node2_data:/data
+    networks:
+      - kvnet
+    restart: unless-stopped
+
+  node3:
+    build: .
+    container_name: kvstore-node3
+    command:
+      - "--node-id"
+      - "node3"
+      - "--port"
+      - "7000"
+      - "--data-dir"
+      - "/data"
+      - "--seed"
+      - "node1:7000"
+      - "--seed"
+      - "node2:7000"
+      - "--N"
+      - "3"
+      - "--R"
+      - "2"
+      - "--W"
+      - "2"
+      - "--log-level"
+      - "info"
+    ports:
+      - "7003:7000"
+    volumes:
+      - node3_data:/data
+    networks:
+      - kvnet
+    restart: unless-stopped
+
+volumes:
+  node1_data:
+  node2_data:
+  node3_data:
+
+networks:
+  kvnet:
+    driver: bridge
