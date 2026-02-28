@@ -2,6 +2,7 @@
 /// @brief MurmurHash3 implementation (public domain — Austin Appleby).
 
 #include "common/murmurhash3.h"
+#include <cstring>
 
 namespace kvstore {
 

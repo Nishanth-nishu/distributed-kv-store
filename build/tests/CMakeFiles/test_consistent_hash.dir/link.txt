@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/test_consistent_hash.dir/test_consistent_hash.cpp.o -o test_consistent_hash  ../libkvstore_lib.a ../lib/libgtest_main.a -lpthread ../lib/libgtest.a 

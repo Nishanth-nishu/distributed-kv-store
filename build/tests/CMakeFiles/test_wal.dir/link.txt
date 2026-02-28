@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/test_wal.dir/test_wal.cpp.o -o test_wal  ../libkvstore_lib.a ../lib/libgtest_main.a -lpthread ../lib/libgtest.a 

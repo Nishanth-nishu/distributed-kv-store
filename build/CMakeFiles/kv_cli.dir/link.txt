@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/kv_cli.dir/tools/cli_client.cpp.o -o kv_cli  libkvstore_lib.a -lpthread 

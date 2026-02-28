@@ -1,0 +1,2 @@
+/usr/bin/ar qc libkvstore_lib.a CMakeFiles/kvstore_lib.dir/src/common/murmurhash3.cpp.o CMakeFiles/kvstore_lib.dir/src/storage/wal.cpp.o CMakeFiles/kvstore_lib.dir/src/storage/storage_engine.cpp.o CMakeFiles/kvstore_lib.dir/src/cluster/consistent_hash.cpp.o CMakeFiles/kvstore_lib.dir/src/cluster/membership.cpp.o CMakeFiles/kvstore_lib.dir/src/cluster/replication.cpp.o CMakeFiles/kvstore_lib.dir/src/server/tcp_server.cpp.o CMakeFiles/kvstore_lib.dir/src/server/coordinator.cpp.o CMakeFiles/kvstore_lib.dir/src/client/kv_client.cpp.o
+/usr/bin/ranlib libkvstore_lib.a

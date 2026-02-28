@@ -20,6 +20,7 @@
 #include <unistd.h>
 #include <sys/socket.h>
 
+#include "common/config.h"
 #include "common/types.h"
 
 namespace kvstore {

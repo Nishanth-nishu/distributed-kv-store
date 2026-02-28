@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/kvstore_node.dir/src/main.cpp.o -o kvstore_node  libkvstore_lib.a -lpthread 
