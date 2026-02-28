@@ -1,0 +1,254 @@
+Start testing: Feb 28 13:15 IST
+----------------------------------------------------------
+1/4 Testing: test_consistent_hash
+1/4 Test: test_consistent_hash
+Command: "/scratch/nishanth.r/proj/build/tests/test_consistent_hash"
+Directory: /scratch/nishanth.r/proj/build/tests
+"test_consistent_hash" start time: Feb 28 13:15 IST
+Output:
+----------------------------------------------------------
+Running main() from /scratch/nishanth.r/proj/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 11 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 11 tests from ConsistentHashTest
+[ RUN      ] ConsistentHashTest.EmptyRingThrows
+[       OK ] ConsistentHashTest.EmptyRingThrows (0 ms)
+[ RUN      ] ConsistentHashTest.AddSingleNode
+13:15:09.180 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+[       OK ] ConsistentHashTest.AddSingleNode (0 ms)
+[ RUN      ] ConsistentHashTest.AddMultipleNodes
+13:15:09.180 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+13:15:09.180 INFO  [consistent_hash.cpp:28] HashRing: added node 'node2' (150 vnodes, ring size=300)
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node3' (150 vnodes, ring size=450)
+[       OK ] ConsistentHashTest.AddMultipleNodes (0 ms)
+[ RUN      ] ConsistentHashTest.DuplicateAddIsIdempotent
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+[       OK ] ConsistentHashTest.DuplicateAddIsIdempotent (0 ms)
+[ RUN      ] ConsistentHashTest.RemoveNode
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node2' (150 vnodes, ring size=300)
+13:15:09.181 INFO  [consistent_hash.cpp:43] HashRing: removed node 'node1' (ring size=150)
+[       OK ] ConsistentHashTest.RemoveNode (0 ms)
+[ RUN      ] ConsistentHashTest.HasNode
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+[       OK ] ConsistentHashTest.HasNode (0 ms)
+[ RUN      ] ConsistentHashTest.ConsistentMappingAfterAddNode
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node2' (150 vnodes, ring size=300)
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node3' (150 vnodes, ring size=450)
+[       OK ] ConsistentHashTest.ConsistentMappingAfterAddNode (0 ms)
+[ RUN      ] ConsistentHashTest.GetNodesReturnDistinctPhysicalNodes
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node2' (150 vnodes, ring size=300)
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node3' (150 vnodes, ring size=450)
+[       OK ] ConsistentHashTest.GetNodesReturnDistinctPhysicalNodes (0 ms)
+[ RUN      ] ConsistentHashTest.GetNodesClampedToAvailable
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node2' (150 vnodes, ring size=300)
+[       OK ] ConsistentHashTest.GetNodesClampedToAvailable (0 ms)
+[ RUN      ] ConsistentHashTest.KeyDistributionIsBalanced
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node2' (150 vnodes, ring size=300)
+13:15:09.181 INFO  [consistent_hash.cpp:28] HashRing: added node 'node3' (150 vnodes, ring size=450)
+[       OK ] ConsistentHashTest.KeyDistributionIsBalanced (1 ms)
+[ RUN      ] ConsistentHashTest.HashIsDeterministic
+13:15:09.183 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+13:15:09.183 INFO  [consistent_hash.cpp:28] HashRing: added node 'node2' (150 vnodes, ring size=300)
+[       OK ] ConsistentHashTest.HashIsDeterministic (0 ms)
+[----------] 11 tests from ConsistentHashTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 11 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_consistent_hash" end time: Feb 28 13:15 IST
+"test_consistent_hash" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: test_storage_engine
+2/4 Test: test_storage_engine
+Command: "/scratch/nishanth.r/proj/build/tests/test_storage_engine"
+Directory: /scratch/nishanth.r/proj/build/tests
+"test_storage_engine" start time: Feb 28 13:15 IST
+Output:
+----------------------------------------------------------
+Running main() from /scratch/nishanth.r/proj/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 12 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 12 tests from StorageEngineTest
+[ RUN      ] StorageEngineTest.PutAndGet
+13:15:09.185 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.185 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+[       OK ] StorageEngineTest.PutAndGet (0 ms)
+[ RUN      ] StorageEngineTest.GetNonExistent
+13:15:09.185 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.185 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+[       OK ] StorageEngineTest.GetNonExistent (0 ms)
+[ RUN      ] StorageEngineTest.DeleteExisting
+13:15:09.185 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.185 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+[       OK ] StorageEngineTest.DeleteExisting (0 ms)
+[ RUN      ] StorageEngineTest.DeleteNonExistent
+13:15:09.186 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.186 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+[       OK ] StorageEngineTest.DeleteNonExistent (0 ms)
+[ RUN      ] StorageEngineTest.OverwriteWithNewerTimestamp
+13:15:09.186 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.186 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+[       OK ] StorageEngineTest.OverwriteWithNewerTimestamp (0 ms)
+[ RUN      ] StorageEngineTest.RejectStaleWrite
+13:15:09.186 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.186 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+[       OK ] StorageEngineTest.RejectStaleWrite (0 ms)
+[ RUN      ] StorageEngineTest.RejectStaleDelete
+13:15:09.187 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.187 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+[       OK ] StorageEngineTest.RejectStaleDelete (0 ms)
+[ RUN      ] StorageEngineTest.RecoverAfterCrash
+13:15:09.187 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.187 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+13:15:09.188 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.188 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+13:15:09.188 INFO  [wal.cpp:228] WAL replay: 3 entries recovered, 0 corrupted
+13:15:09.188 INFO  [storage_engine.cpp:140] Recovery complete: 3 WAL entries, 3 applied, store size = 1
+[       OK ] StorageEngineTest.RecoverAfterCrash (0 ms)
+[ RUN      ] StorageEngineTest.ConditionalPutAcceptsNewer
+13:15:09.188 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.188 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+[       OK ] StorageEngineTest.ConditionalPutAcceptsNewer (0 ms)
+[ RUN      ] StorageEngineTest.ConditionalPutRejectsStale
+13:15:09.188 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.188 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+[       OK ] StorageEngineTest.ConditionalPutRejectsStale (0 ms)
+[ RUN      ] StorageEngineTest.BulkPutAndGetAll
+13:15:09.189 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.189 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+[       OK ] StorageEngineTest.BulkPutAndGetAll (0 ms)
+[ RUN      ] StorageEngineTest.ConcurrentReadWrite
+13:15:09.189 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_se_1137303/wal.log
+13:15:09.189 INFO  [storage_engine.cpp:21] StorageEngine initialized (data_dir=/tmp/kvstore_test_se_1137303)
+[       OK ] StorageEngineTest.ConcurrentReadWrite (300 ms)
+[----------] 12 tests from StorageEngineTest (304 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test suite ran. (304 ms total)
+[  PASSED  ] 12 tests.
+<end of output>
+Test time =   0.31 sec
+----------------------------------------------------------
+Test Passed.
+"test_storage_engine" end time: Feb 28 13:15 IST
+"test_storage_engine" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/4 Testing: test_wal
+3/4 Test: test_wal
+Command: "/scratch/nishanth.r/proj/build/tests/test_wal"
+Directory: /scratch/nishanth.r/proj/build/tests
+"test_wal" start time: Feb 28 13:15 IST
+Output:
+----------------------------------------------------------
+Running main() from /scratch/nishanth.r/proj/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from WALTest
+[ RUN      ] WALTest.CreateNewFile
+13:15:09.492 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_wal_1137320/test.wal
+[       OK ] WALTest.CreateNewFile (0 ms)
+[ RUN      ] WALTest.AppendAndReplay
+13:15:09.492 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_wal_1137320/test.wal
+13:15:09.492 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_wal_1137320/test.wal
+13:15:09.492 INFO  [wal.cpp:228] WAL replay: 3 entries recovered, 0 corrupted
+[       OK ] WALTest.AppendAndReplay (0 ms)
+[ RUN      ] WALTest.ReplayDetectsCorruption
+13:15:09.492 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_wal_1137320/test.wal
+13:15:09.493 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_wal_1137320/test.wal
+13:15:09.499 WARN  [wal.cpp:165] WAL: truncated record at entry 1
+13:15:09.500 INFO  [wal.cpp:228] WAL replay: 1 entries recovered, 1 corrupted
+[       OK ] WALTest.ReplayDetectsCorruption (7 ms)
+[ RUN      ] WALTest.Truncate
+13:15:09.500 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_wal_1137320/test.wal
+13:15:09.500 INFO  [wal.cpp:242] WAL truncated
+13:15:09.500 INFO  [wal.cpp:228] WAL replay: 0 entries recovered, 0 corrupted
+[       OK ] WALTest.Truncate (0 ms)
+[ RUN      ] WALTest.LargeValues
+13:15:09.500 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_wal_1137320/test.wal
+13:15:09.502 INFO  [wal.cpp:228] WAL replay: 1 entries recovered, 0 corrupted
+[       OK ] WALTest.LargeValues (1 ms)
+[ RUN      ] WALTest.EmptyKeyAndValue
+13:15:09.502 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_wal_1137320/test.wal
+13:15:09.502 INFO  [wal.cpp:228] WAL replay: 1 entries recovered, 0 corrupted
+[       OK ] WALTest.EmptyKeyAndValue (0 ms)
+[ RUN      ] WALTest.ManyEntries
+13:15:09.502 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_wal_1137320/test.wal
+13:15:09.578 INFO  [wal.cpp:57] WAL opened: /tmp/kvstore_test_wal_1137320/test.wal
+13:15:09.579 INFO  [wal.cpp:228] WAL replay: 1000 entries recovered, 0 corrupted
+[       OK ] WALTest.ManyEntries (76 ms)
+[----------] 7 tests from WALTest (87 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (87 ms total)
+[  PASSED  ] 7 tests.
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"test_wal" end time: Feb 28 13:15 IST
+"test_wal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: test_quorum
+4/4 Test: test_quorum
+Command: "/scratch/nishanth.r/proj/build/tests/test_quorum"
+Directory: /scratch/nishanth.r/proj/build/tests
+"test_quorum" start time: Feb 28 13:15 IST
+Output:
+----------------------------------------------------------
+Running main() from /scratch/nishanth.r/proj/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from QuorumTest
+[ RUN      ] QuorumTest.DefaultParamsGuaranteeStrongConsistency
+[       OK ] QuorumTest.DefaultParamsGuaranteeStrongConsistency (0 ms)
+[ RUN      ] QuorumTest.StrongConsistencyWith3Nodes
+[       OK ] QuorumTest.StrongConsistencyWith3Nodes (0 ms)
+[ RUN      ] QuorumTest.EventualConsistencyConfig
+[       OK ] QuorumTest.EventualConsistencyConfig (0 ms)
+[ RUN      ] QuorumTest.WriteAllReadOneIsStrong
+[       OK ] QuorumTest.WriteAllReadOneIsStrong (0 ms)
+[ RUN      ] QuorumTest.ReadAllWriteOneIsStrong
+[       OK ] QuorumTest.ReadAllWriteOneIsStrong (0 ms)
+[ RUN      ] QuorumTest.ReplicaNodesAreDistinct
+13:15:09.581 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+13:15:09.581 INFO  [consistent_hash.cpp:28] HashRing: added node 'node2' (150 vnodes, ring size=300)
+13:15:09.581 INFO  [consistent_hash.cpp:28] HashRing: added node 'node3' (150 vnodes, ring size=450)
+[       OK ] QuorumTest.ReplicaNodesAreDistinct (0 ms)
+[ RUN      ] QuorumTest.ReplicaCountDegrades
+13:15:09.581 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+[       OK ] QuorumTest.ReplicaCountDegrades (0 ms)
+[ RUN      ] QuorumTest.AllKeysHavePrimary
+13:15:09.581 INFO  [consistent_hash.cpp:28] HashRing: added node 'node1' (150 vnodes, ring size=150)
+13:15:09.581 INFO  [consistent_hash.cpp:28] HashRing: added node 'node2' (150 vnodes, ring size=300)
+13:15:09.581 INFO  [consistent_hash.cpp:28] HashRing: added node 'node3' (150 vnodes, ring size=450)
+[       OK ] QuorumTest.AllKeysHavePrimary (0 ms)
+[ RUN      ] QuorumTest.SurviveOneNodeFailure
+[       OK ] QuorumTest.SurviveOneNodeFailure (0 ms)
+[ RUN      ] QuorumTest.CannotSurviveTwoNodeFailures
+[       OK ] QuorumTest.CannotSurviveTwoNodeFailures (0 ms)
+[----------] 10 tests from QuorumTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 10 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_quorum" end time: Feb 28 13:15 IST
+"test_quorum" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 28 13:15 IST

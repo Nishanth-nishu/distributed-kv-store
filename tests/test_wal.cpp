@@ -3,6 +3,7 @@
 
 #include <gtest/gtest.h>
 #include <filesystem>
+#include <fstream>
 
 #include "storage/wal.h"
 

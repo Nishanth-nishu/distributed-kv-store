@@ -54,7 +54,7 @@ bool StorageEngine::Delete(const std::string& key, Timestamp ts) {
     std::unique_lock lock(mutex_);
     auto it = store_.find(key);
     if (it == store_.end()) return false;
-    if (it->second.timestamp >= ts) return false;  // Stale delete
+    if (it->second.timestamp > ts) return false;  // Stale delete (strict)
     store_.erase(it);
     return true;
 }

@@ -1,0 +1,5 @@
+test_consistent_hash 1 0.004447
+test_storage_engine 1 0.306385
+test_wal 1 0.0889475
+test_quorum 1 0.00225001
+---
